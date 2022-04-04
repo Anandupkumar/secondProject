@@ -1,0 +1,73 @@
+body, h1,h2,h3,h4,h5,h6 {
+    font-family: "Montserrat", sans-serif
+}
+.w3-row-padding img {
+    margin-bottom: 12px
+}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {
+    width: 120px;background: #222;
+}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {
+    margin-left: 120px
+}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {
+    #main {
+        margin-left: 0
+    }
+}
+
+
+
+input[type=text],[type=number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=date]{
+    width: 100%; 
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #484848;
+  }
+
+  .dform{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+.search{
+    
+    width: 8%;
+    padding: 14px 20px;
+    margin: 8px 0;
+    float: right;
+}
+.search:hover {
+    color: #ffffff;
+    background-color: #000000;
+}
