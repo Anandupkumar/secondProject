@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="w3-black" style="margin:0">
+<body class="w3-black">
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <!-- Avatar image in top left corner -->
   <img src="blood1.png" style="width:100%">
@@ -18,12 +18,12 @@
     <i class="fa fa-home w3-xxlarge"></i>
     <p>HOME</p>
   </a>
+</nav>
   <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
   <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="index.php" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="index.php" class="w3-bar-item w3-button" style="width:100% !important">HOME</a>
   </div>
 </div>
-</nav>
 <!-- Page Content -->
 <div class="" id="main">
   <!-- Header/Home -->
@@ -48,7 +48,7 @@
                     <a href="#" class="w3-button">4</a>
                     <a href="#" class="w3-button">5</a>
                     <?php
-                    $sql="SELECT * FROM bloodbank";
+                    $sql="SELECT * FROM bloodbank ORDER BY age ASC";
                     $result=$conn->query($sql);
                     if($result->num_rows >0){     
                         while($row=$result->fetch_assoc()){
@@ -76,12 +76,53 @@
                                 </form>
                         <?php
                         }
-                    }
+                    }?>
+                    <h2>Edit details</h2>
+                    <hr style="width:200px" class="w3-opacity">
+                    <div class="dform1">
+                        <form action="edit.php" method="post">
+                            <label for="fname">Old Name</label>
+                            <input type="text" id="fname" name="oname" placeholder="Your name.."><br><br>
+                            <label for="fname">Enter details you want to edit</label>
+                            <hr style="width:200px" class="w3-opacity"><br>
+                            <label for="fname">Name</label>
+                            <input type="text" id="fname" name="name" placeholder="Your name..">
+                            
+                            <label for="sex">sex</label>
+                            <select id="sex" name="sex">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                            </select>
+
+                            <label for="lname">age</label>
+                            <input type="number" id="lname" name="age" placeholder="Your age..">
+
+                            <label for="bloodgroup">Blood group</label>
+                            <select id="blood" name="group">
+                            <option value="apos">A +</option>
+                            <option value="aneg">A -</option>
+                            <option value="bpos">B +</option>
+                            <option value="bneg">B -</option>
+                            <option value="abpo">AB +</option>
+                            <option value="abne">AB -</option>
+                            <option value="opos">O +</option>
+                            <option value="oneg">O -</option>
+                            </select>
+
+                            <label for="ldate">Last donated date</label>
+                            <input type="date" id="date" name="date" placeholder="Your last donated date..">
+                        
+                            <input type="submit" value="EDIT">
+                        </form>
+                    </div>
+                    <?php
                 }else if(isset($_POST['edit'])){
                     ?>
                         <br>
                        <form action="next.php" method="post">
-                            <label for="fname">Delete Donor</label><br><br>
+                            <h2>Delete Donor</h2>
+                            <hr style="width:200px" class="w3-opacity">
                             <input type="text" id="fname" name="name" placeholder="Enter name for delete">
                             <button type="submit" class="search" name="delete">Delete</button>
                         

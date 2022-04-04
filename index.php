@@ -91,7 +91,7 @@
       adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
     <h3 class="w3-padding-16 w3-text-light-grey">Donate</h3>
-    
+    <hr style="width:200px" class="w3-opacity">
     <h3>Enter your details to doante blood</h3><br>
 
     <div class="dform">
@@ -256,8 +256,8 @@
             <div class="w3-bar">
                 <br>
                 <form action="view.php" method="post">
-                    <button class="w3-bar-item w3-button" style="width:50%" name="view">View all Donors</button>
-                    <button class="w3-bar-item w3-button" style="width:50%" name="edit">Edit or Delete Donors</button>
+                    <button class="w3-bar-item w3-button" style="width:50%" name="view">View / Edit Donors</button>
+                    <button class="w3-bar-item w3-button" style="width:50%" name="edit">Delete Donors</button>
                 </form>
             </div>      
     </div>
